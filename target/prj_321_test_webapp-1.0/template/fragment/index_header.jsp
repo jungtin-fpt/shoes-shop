@@ -20,5 +20,9 @@
       object-fit: cover;
       object-position: center;
     }
+    .product_col
+    {
+      margin-top: 30px;
+    }
   </style>
 </head>

@@ -913,6 +913,12 @@ section
 {
 
 }
+
+.product_col
+{
+	margin-top: 30px;
+}
+
 .product_image
 {
 	width: 100%;

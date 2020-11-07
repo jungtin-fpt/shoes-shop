@@ -43,44 +43,44 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Last Import Date</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Last Import Date</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            </tfoot>
+                            <tbody>
+                            <c:forEach items="${products}" var="product">
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Last Import Date</th>
-                                    <th></th>
-                                    <th></th>
+                                    <td>${product.id}</td>
+                                    <td><a href="<c:url value="/?id=${product.id}"></c:url>">${product.name}</a></td>
+                                    <td>${product.price}</td>
+                                    <td>${product.quantity}</td>
+                                    <td>${product.lastImportDate}</td>
+                                    <td><a class="btn btn-outline-warning btn-sm"
+                                           href="<c:url value = "/products/update?id=${product.id}"/>">Update</a></td>
+                                    <td><a class="btn btn-sm btn-danger"
+                                           href="<c:url value = "/products/delete?id=${product.id}"/>">Delete</a></td>
                                 </tr>
-                                </thead>
-                                <tfoot>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Last Import Date</th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                                </tfoot>
-                                <tbody>
-                                <c:forEach items="${products}" var="product">
-                                    <tr>
-                                        <td>${product.id}</td>
-                                        <td>${product.name}</td>
-                                        <td>${product.price}</td>
-                                        <td>${product.quantity}</td>
-                                        <td>${product.lastImportDate}</td>
-                                        <td><a class="btn btn-outline-warning btn-sm"
-                                               href="<c:url value = "/products/update?id=${product.id}"/>">Update</a></td>
-                                        <td><a class="btn btn-sm btn-danger"
-                                               href="<c:url value = "/products/delete?id=${product.id}"/>">Delete</a></td>
-                                    </tr>
-                                </c:forEach>
-                                </tbody>
-                            </table>
+                            </c:forEach>
+                            </tbody>
+                        </table>
                         </div>
                     </div>
                 </div>
