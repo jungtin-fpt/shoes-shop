@@ -1,9 +1,11 @@
 package com.jungtin.controller;
 
+import com.jungtin.common.Validator;
 import com.jungtin.common.ViewName;
 import com.jungtin.model.Account;
 import com.jungtin.service.AccountService;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,9 +20,11 @@ import javax.servlet.http.HttpServletResponse;
 public class AccountController extends HttpServlet {
     
     private final AccountService accountService;
+    private final Validator validator;
     
     public AccountController() {
         this.accountService = new AccountService();
+        this.validator = new Validator();
     }
     
     protected void doPost(HttpServletRequest request,
@@ -83,6 +87,22 @@ public class AccountController extends HttpServlet {
     private void processForm(
         HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
+        HashMap<String, String> errors = new HashMap<>();
+    
+        validator.checkRequired("username", request, errors);
+        validator.checkRequired("password", request, errors);
+    
+        if(errors.size() > 0) {
+            HashMap<String, String> account = new HashMap<>();
+            account.put("username", request.getParameter("username"));
+            account.put("password", request.getParameter("password"));
+        
+            request.setAttribute("account", account);
+            request.setAttribute("errors", errors);
+            request.getRequestDispatcher(ViewName.ACCOUNT_FORM).forward(request, response);
+            return;
+        }
+        
         accountService.saveOrUpdate(request);
         redirectToList(request, response);
     }

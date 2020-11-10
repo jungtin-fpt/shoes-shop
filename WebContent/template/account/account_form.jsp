@@ -37,27 +37,24 @@
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
                             <label for="name">Username</label>
-                            <input type="text" class="form-control" id="username"
+                            <input type="text" class="form-control ${errors.username != null ? 'is-invalid' : ''}" id="username"
                                    name="username"
                                    value="${account.username}"
                                    aria-describedby="usernameHelp" required>
+                            <div class="invalid-feedback">
+                                ${errors.username}
+                            </div>
                             <small id="usernameHelp" class="form-text text-muted">Must be unique username</small>
-                            <!-- thêm class  is-invalid / is-valid vào class ở form-control -->
-                            <!-- <div class="invalid-feedback">
-                              Looks good!
-                            </div> -->
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="name">Password</label>
-                            <input type="password" class="form-control" id="name"
+                            <input type="password" class="form-control ${errors.password != null ? 'is-invalid' : ''}" id="name"
                                    name="password"
                                    value="${account.password}"
                                    aria-describedby="passwordHelp" required>
-<%--                            <small id="passwordHelp" class="form-text text-muted">Must be unique name</small>--%>
-                            <!-- thêm class  is-invalid / is-valid vào class ở form-control -->
-                            <!-- <div class="invalid-feedback">
-                              Looks good!
-                            </div> -->
+                            <div class="invalid-feedback">
+                                ${errors.password}
+                            </div>
                         </div>
 
                     </div>

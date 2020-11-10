@@ -1,9 +1,11 @@
 package com.jungtin.controller;
 
 import com.jungtin.common.ViewName;
+import com.jungtin.common.Validator;
 import com.jungtin.model.Product;
 import com.jungtin.service.ProductService;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,9 +20,11 @@ import javax.servlet.http.HttpServletResponse;
 public class ProductController extends HttpServlet {
     
     private final ProductService productService;
+    private final Validator validator;
     
     public ProductController() {
         this.productService = new ProductService();
+        this.validator = new Validator();
     }
     
     protected void doPost(HttpServletRequest request,
@@ -79,6 +83,30 @@ public class ProductController extends HttpServlet {
     private void processForm(
         HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
+        HashMap<String, String> errors = new HashMap<>();
+        
+        validator.checkRequired("name", request, errors);
+        validator.checkRequired("image_url", request, errors);
+        validator.checkRequired("price", request, errors);
+        validator.checkRequired("quantity", request, errors);
+    
+        validator.checkDouble("price", request, errors);
+        validator.checkInteger("quantity", request, errors);
+        validator.checkUrl("image_url", request, errors);
+        
+        if(errors.size() > 0) {
+            HashMap<String, String> product = new HashMap<>();
+            product.put("name", request.getParameter("name"));
+            product.put("imageUrl", request.getParameter("image_url"));
+            product.put("price", request.getParameter("price"));
+            product.put("quantity", request.getParameter("quantity"));
+            
+            request.setAttribute("product", product);
+            request.setAttribute("errors", errors);
+            request.getRequestDispatcher(ViewName.PRODUCT_FORM).forward(request, response);
+            return;
+        }
+        
         productService.saveOrUpdate(request);
         redirectToList(request, response);
     }

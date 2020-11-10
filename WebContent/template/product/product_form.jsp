@@ -37,39 +37,45 @@
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
                             <label for="name">Product name</label>
-                            <input type="text" class="form-control" id="name"
+                            <input type="text" class="form-control ${errors.name != null ? 'is-invalid' : ''}" id="name"
                                    name="name"
                                    value="${product.name}"
-                                   aria-describedby="nameHelp" required>
-                            <small id="nameHelp" class="form-text text-muted">Must be unique name</small>
+                                   aria-describedby="nameHelp">
                             <!-- thêm class  is-invalid / is-valid vào class ở form-control -->
-                            <!-- <div class="invalid-feedback">
-                              Looks good!
-                            </div> -->
+                            <div class="invalid-feedback">
+                                ${errors.name}
+                            </div>
+                            <small id="nameHelp" class="form-text text-muted">Must be unique name</small>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="image_url">Image URL</label>
-                            <input type="text" class="form-control" id="image_url"
+                            <input type="text" class="form-control ${errors.image_url != null ? 'is-invalid' : ''}" id="image_url"
                                    name="image_url"
-                                   value="${product.imageUrl}"
-                                   required>
+                                   value="${product.imageUrl}">
+                            <div class="invalid-feedback">
+                                ${errors.image_url}
+                            </div>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
                             <label for="price">Price</label>
-                            <input type="text" class="form-control" id="price"
+                            <input type="text" class="form-control ${errors.price != null ? 'is-invalid' : ''}" id="price"
                                    name="price" aria-describedby="priceHelp"
-                                   value="${product.price}"
-                                   required>
+                                   value="${product.price}">
+                            <div class="invalid-feedback">
+                                ${errors.price}
+                            </div>
                             <small id="priceHelp" class="form-text text-muted">Only using dot '.' for fraction</small>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="quantity">Quantity</label>
-                            <input type="number" class="form-control" id="quantity"
-                                   name="quantity" value="${product.quantity}" min="1" aria-describedby="quantityHelp"
-                                   required>
+                            <input type="number" class="form-control ${errors.quantity != null ? 'is-invalid' : ''}" id="quantity"
+                                   name="quantity" value="${product.quantity}" min="1" aria-describedby="quantityHelp">
+                            <div class="invalid-feedback">
+                                ${errors.quantity}
+                            </div>
                             <small id="quantityHelp" class="form-text text-muted">Minimum value is 1</small>
                         </div>
                     </div>
