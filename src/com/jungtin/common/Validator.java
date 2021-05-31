@@ -67,7 +67,7 @@ public class Validator {
         HashMap<String, String> errors) {
         if(request.getParameter(paramName) == null || request.getParameter(paramName).isBlank())
             return;
-    
+        
         final String regex = "^(?:http(s):\\/\\/)[\\w.-]+(?:\\.[\\w\\.-]+)+[\\w\\-\\._~:/?#\\[\\]@!\\$&'\\(\\)\\*\\+,;=.]+$";
         if(!request.getParameter(paramName).matches(regex)) {
             if(errors.containsKey(paramName)) {

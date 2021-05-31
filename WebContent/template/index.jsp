@@ -22,7 +22,7 @@
 
 				<!-- Home Slider Item -->
 				<div class="owl-item">
-					<div class="home_slider_background" style="background-image:url(https://storage.googleapis.com/fastdate-image/nike_shoes_1.jpg)"></div>
+					<div class="home_slider_background" style="background-image:url(${pageContext.request.contextPath}/resources/images/nike_shoes_1.jpg)"></div>
 					<div class="home_slider_content">
 						<div class="home_slider_content_inner">
 							<div class="home_slider_subtitle">Nike | Jordan</div>
@@ -33,7 +33,7 @@
 
 				<!-- Home Slider Item -->
 				<div class="owl-item">
-					<div class="home_slider_background" style="background-image:url(https://storage.googleapis.com/fastdate-image/nike_shoes_2.jpg)"></div>
+					<div class="home_slider_background" style="background-image:url(${pageContext.request.contextPath}/resources/images/nike_shoes_2.jpg)"></div>
 					<div class="home_slider_content">
 						<div class="home_slider_content_inner">
 							<div class="home_slider_subtitle">Nike</div>
@@ -44,7 +44,7 @@
 
 				<!-- Home Slider Item -->
 				<div class="owl-item">
-					<div class="home_slider_background" style="background-image:url(https://storage.googleapis.com/fastdate-image/nike_shoes_3.jpg)"></div>
+					<div class="home_slider_background" style="background-image:url(${pageContext.request.contextPath}/resources/images/nike_shoes_3.jpg)"></div>
 					<div class="home_slider_content">
 						<div class="home_slider_content_inner">
 							<div class="home_slider_subtitle">Nike | Jordan</div>
@@ -132,7 +132,7 @@
 	<!-- Gallery -->
 
 	<div class="gallery">
-		<div class="gallery_image" style="background-image:url(https://storage.googleapis.com/fastdate-image/gallery.jpg)"></div>
+		<div class="gallery_image" style="background-image:url(${pageContext.request.contextPath}/resources/images/gallery.jpg)"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -155,43 +155,43 @@
 
 				<!-- Gallery Item -->
 				<div class="owl-item gallery_item">
-					<a class="colorbox" href="https://storage.googleapis.com/fastdate-image/shoes_shop_1.jpg">
-						<img src="https://storage.googleapis.com/fastdate-image/shoes_shop_1.jpg" alt="">
+					<a class="colorbox" href="${pageContext.request.contextPath}/resources/images/shoes_shop_1.jpg">
+						<img src="${pageContext.request.contextPath}/resources/images/shoes_shop_1.jpg" alt="">
 					</a>
 				</div>
 
 				<!-- Gallery Item -->
 				<div class="owl-item gallery_item">
-					<a class="colorbox" href="https://storage.googleapis.com/fastdate-image/shoes_shop_2.jpg">
-						<img src="https://storage.googleapis.com/fastdate-image/shoes_shop_2.jpg" alt="">
+					<a class="colorbox" href="${pageContext.request.contextPath}/resources/images/shoes_shop_2.jpg">
+						<img src="${pageContext.request.contextPath}/resources/images/shoes_shop_2.jpg" alt="">
 					</a>
 				</div>
 
 				<!-- Gallery Item -->
 				<div class="owl-item gallery_item">
-					<a class="colorbox" href="https://storage.googleapis.com/fastdate-image/shoes_shop_3.jpg">
-						<img src="https://storage.googleapis.com/fastdate-image/shoes_shop_3.jpg" alt="">
+					<a class="colorbox" href="${pageContext.request.contextPath}/resources/images/shoes_shop_3.jpg">
+						<img src="${pageContext.request.contextPath}/resources/images/shoes_shop_3.jpg" alt="">
 					</a>
 				</div>
 
 				<!-- Gallery Item -->
 				<div class="owl-item gallery_item">
-					<a class="colorbox" href="https://storage.googleapis.com/fastdate-image/shoes_shop_4.jpg">
-						<img src="https://storage.googleapis.com/fastdate-image/shoes_shop_4.jpg" alt="">
+					<a class="colorbox" href="${pageContext.request.contextPath}/resources/images/shoes_shop_4.jpg">
+						<img src="${pageContext.request.contextPath}/resources/images/shoes_shop_4.jpg" alt="">
 					</a>
 				</div>
 
 				<!-- Gallery Item -->
 				<div class="owl-item gallery_item">
-					<a class="colorbox" href="https://storage.googleapis.com/fastdate-image/shoes_shop_5.jpg">
-						<img src="https://storage.googleapis.com/fastdate-image/shoes_shop_5.jpg" alt="">
+					<a class="colorbox" href="${pageContext.request.contextPath}/resources/images/shoes_shop_5.jpg">
+						<img src="${pageContext.request.contextPath}/resources/images/shoes_shop_5.jpg" alt="">
 					</a>
 				</div>
 
 				<!-- Gallery Item -->
 				<div class="owl-item gallery_item">
-					<a class="colorbox" href="https://storage.googleapis.com/fastdate-image/shoes_shop_6.jpg">
-						<img src="https://storage.googleapis.com/fastdate-image/shoes_shop_6.jpg" alt="">
+					<a class="colorbox" href="${pageContext.request.contextPath}/resources/images/shoes_shop_6.jpg">
+						<img src="${pageContext.request.contextPath}/resources/images/shoes_shop_6.jpg" alt="">
 					</a>
 				</div>
 
