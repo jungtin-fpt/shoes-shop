@@ -9,6 +9,12 @@
 	<name>prj_321_test_webapp</name>
 	<description>testing webapp</description>
 
+	<properties>
+          <sonar.projectKey>jungtin-fpt_shoes-shop-servlet-crud-app</sonar.projectKey>
+          <sonar.organization>jungtin-fpt</sonar.organization>
+          <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+	</properties>
+	
 	<dependencies>
 		<dependency>
 	        <groupId>javax.servlet</groupId>
