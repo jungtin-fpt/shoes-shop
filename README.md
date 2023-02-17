@@ -15,6 +15,7 @@ Mini project được làm trong môn PRJ
 
 ## Công nghệ
 - Java, JSP Servlet
+- Cài đặt vui lòng tham khảo thêm [Shoes Shop Setup](https://github.com/jungtin01/shoes-shop-setup)
 
 ## Screenshots
 
